@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer
 from pydantic_settings import BaseSettings
-from app.config import get_settings
+from app.core.config import get_settings
 
 class Embedder:
     settings: BaseSettings

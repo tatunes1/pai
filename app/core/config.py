@@ -3,11 +3,16 @@ from functools import lru_cache
 import os
 
 class Settings(BaseSettings):
-    es_host: str = "http://localhost:9200"
-    es_index: str = "rag_documents"
+    elasticsearch_url: str = "http://localhost:9200"
+    elasticsearch_index: str = "rag_documents"
     es_vector_dims: int = 384
 
     embed_model: str = "all-MiniLM-L6-v2"
+
+    # Pinecone
+    pinecone_api_key: str
+    pinecone_index_name: str = "rag-search"
+    pinecone_namespace: str = "default"
 
     #LLM
     llm_provider: str = "None"
